@@ -1,0 +1,272 @@
+/*---------Global-----------*/
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+/*-----------Header / Nav-------*/
+
+.header {
+	height: 105vh;
+	overflow: hidden;
+	padding: 20px;
+	position: relative;
+	width: 100%;
+}
+
+.nav {
+	background: white;
+	display: flex;
+	justify-content: center;
+	padding: 20px 30px;
+	position: absolute;
+	top: 0;
+	transform: all 0.3s;
+	z-index: 9;
+	width: 100%;
+}
+
+.nav.sticky {
+	animation-name: animationFade;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	background-color: white;
+	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.35);
+	position: fixed;
+	width: 100%;
+}
+
+@keyframes animationFade {
+	from {
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+		opacity: 0;
+
+	}
+
+	to {
+		-o-transform: none;
+		-webkit-transform: none;
+		opacity: 1;		
+		transform: none;
+	}
+}
+
+.nav.sticky a {
+	color: #18191d;
+}
+
+.nav.sticky ul li.logo .white {
+	display: none;
+}
+
+.nav.sticky ul li.logo .black {
+	display: inline-block;
+}
+
+.nav.sticky .nav-icon span {
+	background: #18191d;
+}
+
+.nav ul {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nav ul li {
+	display: flex;
+}
+
+.nav ul li a {
+	color: #333333;	
+	font-size: 1.1em;
+	margin: 0 1.8rem;
+	padding: 0.25rem 0;
+	text-transform: uppercase;
+}
+
+.nav ul li.logo .black {
+	display: none;
+}
+
+.nav ul li.logo a {
+	margin: 0 4rem;
+}
+
+.nav-icon {
+	cursor: pointer;
+	padding: 5px;
+	position: absolute;
+	top: 27px;
+	right: 30px;
+	width: 40px;
+	z-index: 1;
+}
+
+.nav-icon span {
+	background: #333333;
+	display: block;
+	height: 2px;
+	transition: all 300ms linear;
+	width: 30px;
+}
+
+.nav-icon span:nth-child(1),
+.nav-icon span:nth-child(3) {
+	margin: 0 auto;
+	width: 20px;
+}
+
+.nav-icon:hover span:nth-child(1),
+.nav-icon:hover span:nth-child(3) {
+	width: 34px;
+}
+
+.nav-icon span:nth-child(2) {
+	margin: 5px 0;
+	width: 32px;
+}
+
+.full-nav {
+	background: #f1c30f;
+	color: #18191d;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	overflow-y: hidden;
+	padding: 3.75rem;
+	position: fixed;
+	top: 0;
+	transform: translateY(0);
+	transition: all .4s ease-in-out;
+	visibility: hidden;
+	width: 100;
+	z-index: 99;
+}
+
+.full-nav.open {
+	opacity: 1;
+	transform: translateY(0);
+	transition: all .4s ease-in-out;
+	visibility: visible;
+	z-index: 99;
+}
+
+.full-nav .logo {
+	display: flex;
+	justify-content: center;
+	padding: 4rem;
+}
+
+.nav2 {
+	display: flex;
+	justify-content: center;
+}
+
+.nav2 ul {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 700px;
+}
+
+.nav2 ul li {
+	background-color: #f5f5f5;
+	border-bottom: 10px solid #f1c30f;
+	border-right: 10px solid #f1c30f;
+	display: flex;
+	flex: 50%;
+	padding: 1rem;
+	transition: all 0.5s;
+}
+
+.nav2 ul li:hover {
+	background-color: #ff1637;
+} 
+
+.nav2 ul li a {
+	color: #18191d;
+	font-size: 1.4em;
+}
+
+.nav2 ul li a span {
+	color: #b9b9b9;
+}
+
+.nav2 ul li:hover a,
+.nav2 ul li:hover a span {
+	color: white;
+}
+
+/*--------------Close menu area --------- */
+
+.corner-circle {
+	background-color: white;
+	border-radius: 0 0 0 120px;
+	height: 120px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 120px;
+	z-index: 2;
+}
+
+.nav-close {
+	color: #000000;
+	display: block;
+	font-size: 2.5rem;
+	height: 30px;
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	width: 30px;
+}
+
+/*--------------Social Icons------------- */
+
+.social-icons a {	
+	border: 3px solid white;
+	border-radius: 50px;
+	color: white;
+	display: inherit;
+	font-size: 20px;
+	height: 50px;
+	line-height: 44px;
+	margin-top: 40px;
+	text-align: center;
+	transition: all ease 1s;
+	width: 50px;
+}
+
+.social-icons a:hover, .social-icons a:hover i {
+	border-color: #000000;
+	color: #000000;
+	margin-top: -10px;
+}
+
+ul.social-icons.list-inline {
+	margin-top: 22px;
+	text-align: center;
+}
+
+.list-inline > li {
+	display: inline-block;
+	padding: 0 5px;
+}
